@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a ;
+    cin>>a;
+    int b ;
+    cin>>b;
+
+    cout<<" a&b "<<(a&b)<<endl;
+    cout<<" a|b "<<(a|b)<<endl;
+    cout<<" ~a "<<(~a)<<endl;
+    cout<<" a^b "<<(a^b)<<endl;    
+
+    //left and right shift
+    cout<<(17<<2)<<endl;
+    cout<<(17<<1)<<endl;
+    cout<<(21<<2)<<endl;
+    cout<<(21<<2)<<endl;
+}
