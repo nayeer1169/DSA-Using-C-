@@ -1,13 +1,18 @@
 class Solution {
 public:
-    int hammingWeight(int n) {
-        int count = 0;
-        while(n!=0){
-            if(n&1){
-                count++;
-            }
-            n=n>>1;
+//1009. Complement of Base 10 Integer
+    int bitwiseComplement(int n) {
+        int m=n;
+        int mask=0;
+
+        if(n==0){
+            return 1;
         }
-        return count;
+        while(m!=0){
+            mask=(mask<<1) | 1;
+            m=m>>1;
+        }
+        int ans = (~n) & mask;
+        return ans;
     }
 };
