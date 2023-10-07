@@ -1,18 +1,30 @@
-class Solution {
-public:
-//1009. Complement of Base 10 Integer
-    int bitwiseComplement(int n) {
-        int m=n;
-        int mask=0;
+#include <iostream>
+using namespace std;
 
-        if(n==0){
-            return 1;
+int binarySearch(int n){
+    int s=0;
+    int e=n-1;
+    long long mid=s+(e-s)/2;
+
+    long long ans=-1;
+    while(s<=e){
+        int square = mid*mid;
+
+        if(square==mid){
+            return mid;
         }
-        while(m!=0){
-            mask=(mask<<1) | 1;
-            m=m>>1;
+        if(square<n){
+            ans=ans+mid;
+            s=mid+1;
         }
-        int ans = (~n) & mask;
+        else{
+            e=mid-1;
+        }
         return ans;
     }
-};
+}
+
+int main(){
+    int x;
+    return binarySearch(x);
+}
